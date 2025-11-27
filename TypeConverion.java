@@ -16,6 +16,6 @@ public class TypeConverion {
         byte y = 20;
         int result = x + y; // byte values are promoted to int before arithmetic operation
 
-        System.out.println(i);
+        System.out.println(result);
     }
 }
