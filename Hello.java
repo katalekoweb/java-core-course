@@ -26,16 +26,20 @@ public class Hello {
     // long - 8 bytes
 
     public static void main (String a[]) {
-        int num1 = 0;
-        byte by = 127;
-        short sh = 12345;
-        long lg = 5854l;
-        float fl = 5.67f;
-        double db = 19.9;
-        char c = 'c';
-        String name = "John Doe";
+        int num1 = 1_000_000_000;
 
-        System.out.println(num1);
+        // literals
+        int num2 = 0b101; // binary
+        int num3 = 0x75; // hexadecimal
+
+        // float
+        double num4 = 12e10;
+
+        // boolean
+        boolean isJavaFun = true;
+        char c = 'a';
+        c++;
+        System.out.println(c);
     }
 
 }
