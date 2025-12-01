@@ -1,6 +1,22 @@
 class Human {
     private int age = 30; // accessible only in the same class
-    private String name = "Kata";
+    private String name = "Kataleko Segundo ";
+
+    public Human () {
+        age = 12;
+        name = "John";
+        System.out.println("In constrtuctor...");
+    }
+
+    public Human (String name) {
+        this.name = name;
+    }
+
+    public Human (String name, int age) {
+        this.age = age;
+        this.name = name;
+        System.out.println("In constrtuctor...");
+    }
 
     public int getAge ()
     {
@@ -8,7 +24,7 @@ class Human {
     }
 
     public void setAge (int a) {
-        age = a;
+        this.age = a;
     }
 
     public String getName () {
@@ -16,18 +32,19 @@ class Human {
     }
 
     public void setName (String n) {
-        name = n;
+        this.name = n;
     }
 }
 
 public class Encapsulation {
     public static void main(String[] args) {
-        Human h = new Human();
-        h.setAge(31);
-        // h.name = "Katasboy";
+        Human h = new Human("Julian Kataleko", 30);
+        Human h2 = new Human("Julian 2 Kataleko", 35);
+        // h.setAge(31);
+        // h.setName("Katasboy");
         // h.age = 30;
 
-        System.out.println(h.getName());
-        System.out.println(h.getAge());
+        System.out.println(h.getName() + " " + h.getAge());
+        System.out.println(h2.getName() + " " + h2.getAge());
     }
 }
