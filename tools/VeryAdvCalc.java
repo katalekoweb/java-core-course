@@ -1,4 +1,4 @@
-package Classes;
+package tools;
 
 public class VeryAdvCalc extends AdvancedCalc {
     public double power (double n1, double n2) {

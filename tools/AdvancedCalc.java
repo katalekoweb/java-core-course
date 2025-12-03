@@ -1,4 +1,4 @@
-package Classes;
+package tools;
 
 public class AdvancedCalc extends Calc {
     public int multi (int n1, int n2) {
