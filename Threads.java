@@ -1,12 +1,12 @@
 class Zed {
-    
+
 }
 
-class Helloo extends Thread {
-    public void run () {
-        for (int i = 0; i<=100;i++) {
+class Helloo implements Runnable {
+    public void run() {
+        for (int i = 0; i <= 5; i++) {
             System.out.println("Hi");
-            
+
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
@@ -16,9 +16,9 @@ class Helloo extends Thread {
     }
 }
 
-class HellooB extends Thread {
-    public void run () {
-        for (int i = 0; i<=100;i++) {
+class HellooB implements Runnable {
+    public void run() {
+        for (int i = 0; i <= 5; i++) {
             System.out.println("Hello");
         }
     }
@@ -26,22 +26,46 @@ class HellooB extends Thread {
 
 public class Threads {
     public static void main(String[] args) {
-        Helloo h1 = new Helloo();
-        HellooB h2 = new HellooB();
+        Runnable h1 = () -> {
+            for (int i = 0; i <= 5; i++) {
+                System.out.println("Hi");
 
-        h2.setPriority(Thread.MAX_PRIORITY);
-        System.out.println(h1.getPriority());
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
 
-        h1.start();
+        Runnable h2 = () -> {
+            for (int i = 0; i <= 5; i++) {
+                System.out.println("Hello");
+
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        // h2.setPriority(Thread.MAX_PRIORITY);
+        // System.out.println(h1.getPriority());
+
+        Thread t1 = new Thread(h1);
+        Thread t2 = new Thread(h2);
+
+        t1.start();
         // h1.show();
 
         try {
-                Thread.sleep(2);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            Thread.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        h2.start();
+        t2.start();
         // h2.show();
     }
 }
