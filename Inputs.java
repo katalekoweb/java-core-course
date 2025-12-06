@@ -31,14 +31,14 @@ public class Inputs {
 
             num = Integer.parseInt(br.readLine());
             System.out.println("Num: " + num);
-            //br.close();
+            br.close();
 
-            // j = 18/i;
+            j = 18/i;
         } 
-        // catch (Exception e) {
-        //     System.out.println("Something went wrong: " + e);
-        // } finally {
-        //     System.out.println("Bye");
-        // }
+        catch (Exception e) {
+            System.out.println("Something went wrong: " + e);
+        } finally {
+            System.out.println("Bye");
+        }
     }
 }
